@@ -69,11 +69,8 @@ function initApp() {
     // Setup toast container
     setupToastContainer();
 
-    // Set initial user dropdown value
-    const currentUser = Store.getCurrentUser();
-    if (roleSelector) {
-        roleSelector.value = currentUser.id;
-    }
+    // Render dynamic role selector options
+    renderRoleSelector();
 
     // Bind Global Custom Events
     window.addEventListener('open-task-details', (e) => {
@@ -158,8 +155,13 @@ function initApp() {
     });
 
     Store.subscribe('userSessionChanged', (user) => {
+        if (!user) return;
         updateSidebarUserUI(user);
         applyAccessControl(user);
+        
+        if (roleSelector) {
+            roleSelector.value = user.id;
+        }
         
         // Default views if they swap to designer (designers don't see management)
         if (user.role === 'designer' && currentViewName === 'users') {
@@ -168,6 +170,10 @@ function initApp() {
             switchView(currentViewName);
         }
         updateNotificationsUI(user.id);
+    });
+
+    Store.subscribe('usersChanged', () => {
+        renderRoleSelector();
     });
 
     Store.subscribe('toastTriggered', (toast) => {
@@ -255,6 +261,23 @@ function applyAccessControl(user) {
             btnCreateTaskTrigger.style.display = 'inline-flex';
         }
     }
+}
+
+// Render dynamic role switcher options based on current users database
+function renderRoleSelector() {
+    if (!roleSelector) return;
+    const users = Store.getUsers();
+    const currentUser = Store.getCurrentUser();
+    
+    roleSelector.innerHTML = users.map(user => {
+        let roleLabel = '';
+        if (user.role === 'manager') roleLabel = 'หัวหน้างาน: ';
+        else if (user.role === 'designer') roleLabel = 'ดีไซเนอร์: ';
+        else if (user.role === 'admin') roleLabel = 'ผู้ดูแลระบบ: ';
+        else roleLabel = '';
+        
+        return `<option value="${user.id}" ${user.id === currentUser.id ? 'selected' : ''}>${roleLabel}${user.name}</option>`;
+    }).join('');
 }
 
 // Notifications badge count & list updates
