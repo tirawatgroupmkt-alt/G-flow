@@ -199,7 +199,7 @@ export const Store = {
     // Google Sheets Settings
     // -------------------------------------------------------------
     getSheetsUrl() {
-        return localStorage.getItem('gf_sheets_url') || '';
+        return localStorage.getItem('gf_sheets_url') || 'https://script.google.com/macros/s/AKfycbyZ2TqjOFlN_b31oJ9tGZg40RDYCBla8Fvpct6iAjNwCsj3hb-TMpVLsQG-Sv7FKGxu1g/exec';
     },
 
     setSheetsUrl(url) {

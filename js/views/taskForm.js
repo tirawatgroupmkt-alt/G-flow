@@ -312,12 +312,6 @@ export const TaskFormView = {
         if (closeBtn) closeBtn.addEventListener('click', closeModal);
         if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
 
-        formModal.addEventListener('click', (e) => {
-            if (e.target === formModal) {
-                closeModal();
-            }
-        });
-
         // Form Submit
         if (form) {
             form.addEventListener('submit', (e) => {

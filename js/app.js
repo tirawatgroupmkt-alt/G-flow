@@ -72,6 +72,11 @@ function initApp() {
     // Render dynamic role selector options
     renderRoleSelector();
 
+    // Auto-sync pull on app startup if Sheets URL is configured
+    if (Store.getSheetsUrl()) {
+        Store.fetchFromSheets().catch(err => console.error("Initial background sync failed:", err));
+    }
+
     // Bind Global Custom Events
     window.addEventListener('open-task-details', (e) => {
         const { taskId, forceSubmit, forceReview } = e.detail;
