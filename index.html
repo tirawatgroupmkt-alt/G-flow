@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-Flow // Graphic Team Workflow Manager</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dark-theme">
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="3" width="8" height="8" rx="2" fill="url(#logo-grad-1)"/>
+                            <rect x="13" y="3" width="8" height="8" rx="2" fill="url(#logo-grad-2)"/>
+                            <rect x="3" y="13" width="8" height="8" rx="2" fill="url(#logo-grad-2)"/>
+                            <path d="M17 13C19.2091 13 21 14.7909 21 17C21 19.2091 19.2091 21 17 21C14.7909 21 13 19.2091 13 17C13 14.7909 14.7909 13 17 13Z" fill="url(#logo-grad-1)"/>
+                            <defs>
+                                <linearGradient id="logo-grad-1" x1="3" y1="3" x2="11" y2="11" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#8B5CF6"/>
+                                    <stop offset="1" stop-color="#3B82F6"/>
+                                </linearGradient>
+                                <linearGradient id="logo-grad-2" x1="13" y1="3" x2="21" y2="11" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#3B82F6"/>
+                                    <stop offset="1" stop-color="#10B981"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <span class="logo-text">G-Flow</span>
+                </div>
+                <span class="version-tag">v1.0 MVP</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active" data-view="dashboard">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg>
+                        <span>Dashboard</span>
+                    </li>
+                    <li class="nav-item" data-view="kanban">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7V7h2v10zm4-4h-2V7h2v6zm4-2h-2V7h2v4z"/></svg>
+                        <span>Kanban Board</span>
+                    </li>
+                    <li class="nav-item" data-view="mytasks">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                        <span>My Tasks</span>
+                    </li>
+                    <li class="nav-item" data-view="reports">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                        <span>Reports & Summary</span>
+                    </li>
+                    <li class="nav-item admin-only" data-view="users">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <span>Team Management</span>
+                    </li>
+                    <li class="nav-item" data-view="settings">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                        <span>Sync Settings</span>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="current-user-info">
+                    <div class="user-avatar" id="sidebar-user-avatar">P</div>
+                    <div class="user-details">
+                        <span class="user-name" id="sidebar-user-name">Pim (Manager)</span>
+                        <span class="user-role" id="sidebar-user-role">Manager</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Body -->
+        <main class="main-content">
+            <!-- Top Navigation Header -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 id="page-title">Dashboard</h1>
+                    <p class="text-secondary" id="page-subtitle">Overview of team design jobs and delivery speeds</p>
+                </div>
+                <div class="header-right">
+                    <!-- Global Actions -->
+                    <button class="btn btn-primary" id="btn-create-task-trigger">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        <span>สร้างงานใหม่</span>
+                    </button>
+
+                    <!-- Role Quick Switcher (For demonstration and evaluation) -->
+                    <div class="role-switcher-container">
+                        <label for="role-selector">สิทธิ์ผู้ใช้:</label>
+                        <select id="role-selector" class="select-input">
+                            <option value="pim">หัวหน้างาน: Pim</option>
+                            <option value="art">ดีไซเนอร์: Art</option>
+                            <option value="bank">ดีไซเนอร์: Bank</option>
+                            <option value="cherry">ดีไซเนอร์: Cherry</option>
+                            <option value="admin">ผู้ดูแลระบบ</option>
+                        </select>
+                    </div>
+
+                    <!-- Notification Button -->
+                    <div class="notification-badge-container">
+                        <button class="btn-icon" id="notification-trigger" aria-label="Notifications">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                            <span class="badge" id="notification-count">0</span>
+                        </button>
+                        <div class="notifications-dropdown glass-card hidden" id="notifications-dropdown">
+                            <div class="dropdown-header">
+                                <h3>การแจ้งเตือน</h3>
+                                <button class="btn-text" id="btn-clear-notifications">ล้างทั้งหมด</button>
+                            </div>
+                            <div class="notifications-list" id="notifications-list">
+                                <div class="empty-state">ไม่มีการแจ้งเตือนใหม่</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dynamic View Container -->
+            <div class="content-body" id="main-view-container">
+                <!-- Injected dynamically by router.js -->
+            </div>
+        </main>
+    </div>
+
+    <!-- MODAL: Task Details -->
+    <div class="modal-backdrop hidden" id="task-detail-modal">
+        <div class="modal-container task-detail-container glass-card animate-slide-in">
+            <!-- Filled dynamically by taskDetail.js -->
+        </div>
+    </div>
+
+    <!-- MODAL: Create / Edit Task -->
+    <div class="modal-backdrop hidden" id="task-form-modal">
+        <div class="modal-container task-form-container glass-card animate-slide-in">
+            <!-- Filled dynamically by taskForm.js -->
+        </div>
+    </div>
+
+    <!-- Core App JS Scripts -->
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
