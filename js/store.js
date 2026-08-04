@@ -2,11 +2,11 @@
 
 // Default Seed Data
 const DEFAULT_USERS = [
-    { id: 'admin', name: 'Administrator', email: 'admin@gflow.com', role: 'admin', department: 'IT', position: 'SysAdmin', status: 'active', avatar: 'AD' },
-    { id: 'pim', name: 'Pim (Manager)', email: 'pim@gflow.com', role: 'manager', department: 'Creative', position: 'Creative Director', status: 'active', avatar: 'P' },
-    { id: 'art', name: 'Art (Designer)', email: 'art@gflow.com', role: 'designer', department: 'Graphic Design', position: 'Senior Graphic Designer', status: 'active', avatar: 'A' },
-    { id: 'bank', name: 'Bank (Designer)', email: 'bank@gflow.com', role: 'designer', department: 'Graphic Design', position: 'Graphic Designer', status: 'active', avatar: 'B' },
-    { id: 'cherry', name: 'Cherry (Designer)', email: 'cherry@gflow.com', role: 'designer', department: 'Graphic Design', position: 'Junior Graphic Designer', status: 'active', avatar: 'C' }
+    { id: 'admin', name: 'admin', email: 'admin@gflow.com', role: 'admin', department: 'IT', position: 'SysAdmin', status: 'active', avatar: 'AD' },
+    { id: 'nink', name: 'NINK', email: 'nink@gflow.com', role: 'manager', department: 'Creative', position: 'Creative Director', status: 'active', avatar: 'N' },
+    { id: 'pakin', name: 'Pakin', email: 'pakin@gflow.com', role: 'designer', department: 'Graphic Design', position: 'Senior Graphic Designer', status: 'active', avatar: 'PK' },
+    { id: 'poon', name: 'Poon', email: 'poon@gflow.com', role: 'designer', department: 'Graphic Design', position: 'Graphic Designer', status: 'active', avatar: 'PN' },
+    { id: 'wave', name: 'Wave', email: 'wave@gflow.com', role: 'designer', department: 'Graphic Design', position: 'Junior Graphic Designer', status: 'active', avatar: 'W' }
 ];
 
 const DEFAULT_TASKS = [
@@ -15,8 +15,8 @@ const DEFAULT_TASKS = [
         task_name: 'ออกแบบ Cover Page Facebook - แคมเปญ Mid-Year Sale',
         description: 'ออกแบบแบนเนอร์ Cover Page สำหรับแฟนเพจหลัก เน้นความโดดเด่นของโปรโมชั่นลดสูงสุด 50% และโปรโมชั่นซื้อ 1 แถม 1',
         task_type: 'Static Image',
-        assigned_to: 'art',
-        created_by: 'pim',
+        assigned_to: 'pakin',
+        created_by: 'nink',
         request_date: '2026-07-01T09:00:00Z',
         start_date: '2026-07-02T10:00:00Z',
         due_date: '2026-07-08T18:00:00Z',
@@ -42,7 +42,7 @@ const DEFAULT_TASKS = [
         asset_url: 'https://drive.google.com/drive/folders/mock-assets-midyear',
         final_file_url: '',
         final_file_type: '',
-        reviewer: 'pim',
+        reviewer: 'nink',
         review_status: 'pending',
         revision_round: 0,
         feedback: '',
@@ -53,8 +53,8 @@ const DEFAULT_TASKS = [
         task_name: 'ดีไซน์โพสต์ Carousel LINE OA - โปรโมทสินค้าใหม่คอลเลกชันฤดูร้อน',
         description: 'ออกแบบภาพสำหรับส่งบรอดแคสต์ LINE OA จำนวน 4 การ์ด เพื่อเปิดตัวสินค้าครีมกันแดดและสเปรย์น้ำแร่สูตรใหม่',
         task_type: 'Carousel',
-        assigned_to: 'cherry',
-        created_by: 'pim',
+        assigned_to: 'poon',
+        created_by: 'nink',
         request_date: '2026-07-05T11:00:00Z',
         start_date: null,
         due_date: '2026-07-10T15:00:00Z',
@@ -80,7 +80,7 @@ const DEFAULT_TASKS = [
         asset_url: 'https://drive.google.com/drive/folders/mock-assets-summer-skincare',
         final_file_url: '',
         final_file_type: '',
-        reviewer: 'pim',
+        reviewer: 'nink',
         review_status: 'pending',
         revision_round: 0,
         feedback: '',
@@ -91,8 +91,8 @@ const DEFAULT_TASKS = [
         task_name: 'ตกแต่งแบนเนอร์หน้าร้าน Shopee & Lazada - แคมเปญ Double Day 7.7',
         description: 'แบนเนอร์ตกแต่งหน้าร้านค้าออนไลน์ Shopee/Lazada ขนาดใหญ่เพื่อรองรับแคมเปญ 7.7',
         task_type: 'Static Image',
-        assigned_to: 'bank',
-        created_by: 'pim',
+        assigned_to: 'wave',
+        created_by: 'nink',
         request_date: '2026-06-20T08:00:00Z',
         start_date: '2026-06-21T09:00:00Z',
         due_date: '2026-07-06T12:00:00Z',
@@ -118,7 +118,7 @@ const DEFAULT_TASKS = [
         asset_url: 'https://drive.google.com/drive/folders/mock-assets-77-sale',
         final_file_url: 'https://drive.google.com/file/d/mock-banner-77-final-v1.jpg',
         final_file_type: 'JPG',
-        reviewer: 'pim',
+        reviewer: 'nink',
         review_status: 'pending',
         revision_round: 1,
         feedback: 'อยากให้ฟอนต์ราคาโปรโมชั่นลด 70% ตัวหนากว่านี้หน่อย และขยับโลโก้ไว้มุมขวาบนแทน',
@@ -127,22 +127,32 @@ const DEFAULT_TASKS = [
 ];
 
 const DEFAULT_COMMENTS = [
-    { comment_id: 'C-201', task_id: 'TASK-103', user_id: 'bank', comment: 'ผมได้อัปโหลดไฟล์ดราฟท์แรกแล้วครับ รบกวนตรวจด้วยนะครับป้ายราคาลด 70% ค่อนข้างเด่น', created_at: '2026-07-05T14:30:00Z' },
-    { comment_id: 'C-202', task_id: 'TASK-103', user_id: 'pim', comment: 'อยากให้ฟอนต์ราคาโปรโมชั่นลด 70% ตัวหนากว่านี้หน่อย และขยับโลโก้ไว้มุมขวาบนแทน', created_at: '2026-07-06T09:15:00Z' }
+    { comment_id: 'C-201', task_id: 'TASK-103', user_id: 'wave', comment: 'ผมได้อัปโหลดไฟล์ดราฟท์แรกแล้วครับ รบกวนตรวจด้วยนะครับป้ายราคาลด 70% ค่อนข้างเด่น', created_at: '2026-07-05T14:30:00Z' },
+    { comment_id: 'C-202', task_id: 'TASK-103', user_id: 'nink', comment: 'อยากให้ฟอนต์ราคาโปรโมชั่นลด 70% ตัวหนากว่านี้หน่อย และขยับโลโก้ไว้มุมขวาบนแทน', created_at: '2026-07-06T09:15:00Z' }
 ];
 
 const DEFAULT_LOGS = [
-    { log_id: 'L-301', task_id: 'TASK-101', user_id: 'pim', action: 'Create Task', old_value: '', new_value: 'New Brief', created_at: '2026-07-01T09:00:00Z' },
-    { log_id: 'L-302', task_id: 'TASK-101', user_id: 'art', action: 'Change Status', old_value: 'New Brief', new_value: 'In Design', created_at: '2026-07-02T10:00:00Z' },
-    { log_id: 'L-303', task_id: 'TASK-103', user_id: 'pim', action: 'Create Task', old_value: '', new_value: 'New Brief', created_at: '2026-06-20T08:00:00Z' }
+    { log_id: 'L-301', task_id: 'TASK-101', user_id: 'nink', action: 'Create Task', old_value: '', new_value: 'New Brief', created_at: '2026-07-01T09:00:00Z' },
+    { log_id: 'L-302', task_id: 'TASK-101', user_id: 'pakin', action: 'Change Status', old_value: 'New Brief', new_value: 'In Design', created_at: '2026-07-02T10:00:00Z' },
+    { log_id: 'L-303', task_id: 'TASK-103', user_id: 'nink', action: 'Create Task', old_value: '', new_value: 'New Brief', created_at: '2026-06-20T08:00:00Z' }
 ];
 
 const DEFAULT_NOTIFICATIONS = [
-    { id: 'N-401', user_id: 'art', message: 'คุณได้รับมอบหมายงานใหม่: ออกแบบ Cover Page Facebook - แคมเปญ Mid-Year Sale', is_read: false, created_at: '2026-07-01T09:05:00Z', task_id: 'TASK-101' }
+    { id: 'N-401', user_id: 'pakin', message: 'คุณได้รับมอบหมายงานใหม่: ออกแบบ Cover Page Facebook - แคมเปญ Mid-Year Sale', is_read: false, created_at: '2026-07-01T09:05:00Z', task_id: 'TASK-101' }
 ];
 
 // Helper to initialize local storage
 function initLocalStorage() {
+    // If local storage has the old user schema, force clear to reload new users
+    if (localStorage.getItem('gf_users') && localStorage.getItem('gf_users').includes('"id":"pim"')) {
+        localStorage.removeItem('gf_users');
+        localStorage.removeItem('gf_tasks');
+        localStorage.removeItem('gf_comments');
+        localStorage.removeItem('gf_logs');
+        localStorage.removeItem('gf_notifications');
+        localStorage.removeItem('gf_active_user');
+    }
+
     if (!localStorage.getItem('gf_users')) {
         localStorage.setItem('gf_users', JSON.stringify(DEFAULT_USERS));
     }
@@ -159,7 +169,7 @@ function initLocalStorage() {
         localStorage.setItem('gf_notifications', JSON.stringify(DEFAULT_NOTIFICATIONS));
     }
     if (!localStorage.getItem('gf_active_user')) {
-        localStorage.setItem('gf_active_user', 'pim');
+        localStorage.setItem('gf_active_user', 'nink');
     }
 }
 
